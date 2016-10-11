@@ -38,6 +38,11 @@ public class triangle {
 		double p,area;
 		p=((side1+side2+side3)/2);
 		area=Math.sqrt(p*(p-side1)*(p-side2)*(p-side3));
+		if(area<0||area==0){
+			TriangleException e = new TriangleException(area);
+			System.out.println("You did not create a real triangle. Please enter new numbers.");
+			return 0;
+		}
 		return area;
 	}
 	/**
